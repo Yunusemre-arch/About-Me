@@ -1,0 +1,50 @@
+/* Sayfanın genel arka planı ve yazı tipi */
+body {
+    background-color: #f4f4f4; /* Hafif gri, gözü yormayan bir renk */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333; /* Tam siyah yerine koyu gri yazı */
+    line-height: 1.6; /* Satır aralığını açarak okunabilirliği artırır */
+    margin: 40px; /* Kenarlardan boşluk bırakır */
+}
+
+/* Başlıkları özelleştirelim */
+h1 {
+    color: #2c3e50; /* Mimari bir tonda koyu mavi/lacivert */
+    border-bottom: 2px solid #2c3e50; /* Altına bir çizgi çekelim */
+    padding-bottom: 10px;
+}
+
+/* Resimleri biraz daha şık yapalım */
+img {
+    border-radius: 10px; /* Köşeleri yuvarlar */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Hafif bir gölge ekler */
+}
+
+/* Linkleri (bağlantıları) buton gibi gösterelim */
+a {
+    display: inline-block;
+    background-color: #e67e22; /* Turuncu tonu */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #d35400; /* Fareyle üzerine gelince renk koyulaşır */
+}
+.container {
+    max-width: 800px;    /* Sayfa çok yayılmasın, 800px'de dursun */
+    margin: 0 auto;      /* Üstten-alttan 0, sağdan-soldan otomatik (Ortalar) */
+    background-color: white; 
+    padding: 40px;       /* İçerik kenarlara çok yapışmasın */
+    box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Sayfaya derinlik katar */
+    border-radius: 15px; /* Köşeleri yumuşatır */
+}
+section {
+    background-color: #f9f9f9;
+    border-left: 5px solid #e67e22; /* Sol tarafa mimari bir detay çizgisi */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
