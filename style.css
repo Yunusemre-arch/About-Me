@@ -1,60 +1,218 @@
-/* Genel Sayfa Ayarları */
-body {
-    background-color: #f0f2f5; /* Arka plan rengi */
-    font-family: 'Montserrat', sans-serif; /* Google Fonts */
-    color: #333;
-    line-height: 1.6;
+/* --- Temel Ayarlar --- */
+* {
     margin: 0;
-    padding: 20px; /* Mobil cihazlar için dış boşluk */
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Beyaz Kapsayıcı Kutu (Senin paftan gibi düşün) */
+body {
+    background-color: #050505; 
+    color: #ffffff; 
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
 .container {
-    max-width: 800px;
-    margin: 40px auto;      /* Sayfayı ortalar */
-    background-color: white; 
-    padding: 40px;          /* Yazıların kenara yapışmasını engeller */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Hafif gölge */
-    border-radius: 15px;    /* Köşeleri yumuşatır */
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
 }
 
-/* Başlıklar */
-h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #e67e22; /* Turuncu bir detay çizgisi */
-    padding-bottom: 10px;
+/* --- Üst Menü (Navbar) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
 }
 
-h2 {
-    color: #2c3e50;
-    margin-top: 30px;
+/* Logonun Link Özelliğini Düzeltmek İçin */
+.navbar a.logo {
+    text-decoration: none;
 }
 
-/* İçerik Bölümleri (Section) */
-section {
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    border: 2px solid #fff;
+    padding: 12px 18px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    color: #fff;
+    display: inline-block;
+}
+
+.logo:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #bbb;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* --- Ana İçerik Alanı --- */
+#main-content {
+    flex: 1; /* İçeriğin footer'ı aşağı itmesini sağlar */
+}
+
+/* --- Ana Sayfa Yazıları --- */
+.hero-text-fixed {
+    margin-bottom: 40px;
+}
+
+.hero-text-fixed h2 {
+    font-weight: 200;
+    font-size: 28px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+.hero-text-fixed p {
+    font-size: 12px;
+    color: #aaa;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* --- YENİ: CSS ile Yatay Resim Galerisi --- */
+.css-gallery {
+    display: flex;
+    overflow-x: auto; /* Sağa sola kaydırmayı açar */
+    gap: 20px; /* Resimler arası boşluk */
+    padding-bottom: 15px; /* Alt kaydırma çubuğu için boşluk */
+    scroll-snap-type: x mandatory; /* Resimlerin tam ortaya oturmasını sağlar */
+}
+
+/* Kaydırma çubuğunun (Scrollbar) tasarımı */
+.css-gallery::-webkit-scrollbar {
+    height: 6px;
+}
+.css-gallery::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.css-gallery img {
+    height: 60vh;
+    min-width: 100%; /* Her resim tam ekran genişliğinde olur */
+    object-fit: cover;
+    scroll-snap-align: center; /* Kaydırınca resim ortada durur */
+}
+
+/* --- Alt Sayfa İçerikleri (About, Contact vb.) --- */
+.content-box {
+    padding: 20px 0;
+    max-width: 700px;
+}
+
+.content-box h1, .content-box h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.content-box p {
+    color: #eee;
+    font-size: 18px;
     margin-bottom: 30px;
 }
 
-/* Resim Düzenleme */
-img {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: block;
-    margin: 20px 0;
+.project-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #222;
+    color: #ddd;
+    font-size: 14px;
 }
 
-/* Linki Buton Yapma */
-a {
+.contact-link {
     display: inline-block;
-    background-color: #e67e22;
-    color: white;
-    padding: 12px 24px;
+    padding: 15px 30px;
+    border: 1px solid #fff;
+    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s; /* Renk geçişini yumuşatır */
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    transition: 0.3s;
 }
 
-a:hover {
-    background-color: #d35400;
+.contact-link:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* --- Alt Bilgi (Footer) --- */
+footer {
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* --- RESPONSIVE DESIGN (MOBİL UYUMLULUK - VİZE İÇİN KRİTİK) --- */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 20px; /* Kenar boşluklarını telefonda daralt */
+    }
+
+    .navbar {
+        flex-direction: column; /* Logoyu ve menüyü alt alta al */
+        gap: 20px;
+        padding: 30px 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap; /* Menü sığmazsa alt satıra geçsin */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-text-fixed h2 {
+        font-size: 20px; /* Başlığı telefonda küçült */
+        letter-spacing: 3px;
+    }
+
+    .css-gallery img {
+        height: 40vh; /* Resimleri telefonda çok uzatıp ekranı kaplamasın */
+    }
+
+    .content-box h1 {
+        font-size: 24px;
+    }
+
+    .content-box p {
+        font-size: 16px;
+    }
+
+    footer {
+        padding: 30px 0;
+    }
 }
